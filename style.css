@@ -1,0 +1,154 @@
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+
+  body {
+      background-color: azure;
+      font-family: 'Poppins', sans-serif;
+  }
+
+  .body {
+      height: 100vh;
+      width: 100vw;
+      background-image: url(./assets/pexels-john-cahil-rom-2170473.jpg);
+      background-size: cover;
+      background-position: center;
+  }
+
+  button {
+      cursor: pointer;
+      border-radius: 0.5rem;
+      outline: none;
+      border: none;
+  }
+
+  .heading {
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
+
+      h1 {
+          font-size: 5vh;
+          font-weight: 300;
+          color: wheat;
+      }
+  }
+
+  .container {
+      margin: 0 auto;
+      border-radius: 5px;
+      width: 45vw;
+      max-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #1f1f1fac;
+
+  }
+
+  form {
+      padding: 1.5rem;
+      display: flex;
+      gap: 0.5rem;
+
+      input{
+        font-size: 1rem;
+        color: black;
+      }
+
+      input,
+      .submit {
+          height: 5vh;
+          width: 20vw;
+          padding: 1rem;
+          border-radius: 1rem;
+          outline: none;
+          border: none;
+          opacity: 0.7;
+      }
+
+      .submit {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 2.5rem;
+          padding: 1rem 0;
+          border-radius: 50%;
+          /* background-color: transparent; */
+
+          img {
+              height: 1.5rem;
+              width: 1.5rem;
+          }
+      }
+
+      .submit:hover {
+          opacity: 0.6;
+      }
+
+  }
+
+  .todo-body {
+      margin: 1rem 0;
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      height: 90%;
+      gap: 0.5rem;
+      overflow-y: auto;
+
+      .list {
+          padding: 1rem;
+          border-radius: 10px;
+          display: flex;
+          justify-content: space-between;
+          min-height: 5rem;
+          background-color: #9d6bce;
+
+          .left {
+              display: flex;
+              align-items: center;
+              max-width: 70%;
+              overflow: hidden;
+
+              p {
+                  font-size: 1.5rem;
+                  font-weight: 500;
+                  text-transform: uppercase;
+              }
+
+              .inp{
+                height: 2rem;
+                outline: none;
+                border: none;
+                padding: 0.5rem;
+                background-color: transparent;
+              }
+          }
+
+          .right {
+              display: flex;
+              gap: 0.7rem;
+              align-items: center;
+
+              img {
+                  height: 1.5rem;
+                  width: 1.8rem;
+                  cursor: pointer;
+              }
+
+              img:hover {
+                  opacity: 0.8;
+              }
+          }
+      }
+
+      .hide {
+          display: none;
+      }
+  }
