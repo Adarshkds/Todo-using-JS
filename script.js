@@ -51,6 +51,7 @@ function addItem(inp) {
     arr.unshift(list);
     addList(arr);
     hideUp();
+    hideDown();
 }
 
 // to add list in todo-body
@@ -186,6 +187,8 @@ todoBody.addEventListener('click', (e) => {
 })
 
 function hideDown() {
+    const lastEle = arr[arr.length - 1];
+    
     for (let ele of arr) {
         ele.lastElementChild.firstElementChild.style.display = 'block';
         if (ele.classList.contains('checked')) {
@@ -195,6 +198,8 @@ function hideDown() {
             break;
         }
     };
+    
+    lastEle.lastElementChild.firstElementChild.style.display = 'none';
 }
 
 
