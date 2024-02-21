@@ -56,9 +56,9 @@
       display: flex;
       gap: 0.5rem;
 
-      input{
-        font-size: 1rem;
-        color: black;
+      input {
+          font-size: 1rem;
+          color: black;
       }
 
       input,
@@ -101,7 +101,7 @@
       height: 90%;
       gap: 0.5rem;
       overflow-y: auto;
-
+    
       .list {
           padding: 1rem;
           border-radius: 10px;
@@ -115,6 +115,7 @@
               align-items: center;
               max-width: 70%;
               overflow: hidden;
+              /* border: 1px solid red; */
 
               p {
                   font-size: 1.5rem;
@@ -122,12 +123,12 @@
                   text-transform: uppercase;
               }
 
-              .inp{
-                height: 2rem;
-                outline: none;
-                border: none;
-                padding: 0.5rem;
-                background-color: transparent;
+              .inp {
+                  height: 2rem;
+                  outline: none;
+                  border: none;
+                  padding: 0.5rem;
+                  background-color: transparent;
               }
           }
 
@@ -135,6 +136,7 @@
               display: flex;
               gap: 0.7rem;
               align-items: center;
+              /* border: 1px solid red; */
 
               img {
                   height: 1.5rem;
@@ -151,4 +153,19 @@
       .hide {
           display: none;
       }
+  }
+
+  .checkbox{
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid black; */
+}
+
+  input[type="checkbox"] {
+      zoom: 2;
+      cursor: pointer;
   }
