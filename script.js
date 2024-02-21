@@ -50,8 +50,7 @@ function addItem(inp) {
     //to add list at the top
     arr.unshift(list);
     addList(arr);
-    hideUp();
-    hideDown();
+    hideUpDown();
 }
 
 // to add list in todo-body
@@ -60,20 +59,6 @@ function addList(arr) {
     arr.forEach(list => {
         todoBody.appendChild(list);
     });
-}
-
-
-//to hide up or down button
-function hideUp() {
-    arr.forEach(ele => {
-        if (!ele.classList.contains('checked')) {
-            const eachList = ele.lastElementChild.lastElementChild;
-            eachList.style.display = 'block';
-        }
-    });
-
-    const topList = arr[0].lastElementChild.lastElementChild;
-    topList.style.display = 'none';
 }
 
 
@@ -97,7 +82,7 @@ todoBody.addEventListener('click', (e) => {
             arr.splice(indexToRemove, 1);
         }
         parent.remove();
-        hideDown();
+        hideUpDown();
     } else if (clicked.classList.contains('edit')) {
         editInp(clicked);
     }
@@ -115,8 +100,7 @@ function upOrDown(btnClicked, clicked) {
         currList.style.backgroundColor = btnClicked.style.backgroundColor;
         btnClicked.style.backgroundColor = tempClr;
     }
-    hideUp();
-    hideDown();
+    hideUpDown();
 }
 
 // edit function
@@ -181,24 +165,33 @@ todoBody.addEventListener('click', (e) => {
         }
         arr.push(inLast);
         addList(arr);   //to add list in todo-body
-        hideUp();       //to hide up button
-        hideDown();     //to hide down button
+        hideUpDown();     //to hide button
     }
 })
 
-function hideDown() {
+
+//to hide up or down button
+function hideUpDown() {
     const lastEle = arr[arr.length - 1];
+    const firstEle = arr[0];
     
     for (let ele of arr) {
         ele.lastElementChild.firstElementChild.style.display = 'block';
+
+        if (!ele.classList.contains('checked')) {
+            const eachList = ele.lastElementChild.lastElementChild;
+            eachList.style.display = 'block';
+        }
+
         if (ele.classList.contains('checked')) {
             const list = ele.lastElementChild.firstElementChild;
             list.style.display = 'none';
             ele.previousElementSibling.lastElementChild.firstElementChild.style.display = 'none';
-            break;
+            // break;
         }
     };
-    
+
+    firstEle.lastElementChild.lastElementChild.style.display = 'none';
     lastEle.lastElementChild.firstElementChild.style.display = 'none';
 }
 
